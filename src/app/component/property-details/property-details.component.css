@@ -1,0 +1,159 @@
+
+.property-details-container {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-inline: 10%;
+  background-color: rgba(255, 255, 255, 0.600);
+}
+
+.property-details {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.property-image img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.property-info {
+  padding: 20px;
+  flex: 1;
+}
+
+.property-meta span {
+  margin-right: 15px;
+}
+
+.property-description {
+  margin: 15px 0;
+}
+
+.property-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.property-actions .btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: slideBottom 5s ease forwards infinite;
+  animation-delay: 5s;
+}
+
+.buy-now {
+  background-color: #007bff;
+  color: white;
+  animation: slideBottom 5s ease forwards infinite;
+  animation-delay: 5s;
+}
+.update-now {
+  background-color: #82e4eb;
+  color: rgb(0, 0, 0);
+}
+.wishlist {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.favorite {
+  background-color: #ffcc00;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .property-details {
+    flex-direction: column;
+  }
+  
+  .property-info {
+    padding: 15px;
+  }
+
+  .property-details-container{
+    margin: 0;
+    width: 100%;
+  }
+}
+
+
+  /* Style for the heart icon */
+  .favorite-icon {
+    font-size: 23px;
+    
+    position: absolute;
+    top: 205px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    pointer-events: auto; /* Ensure it catches click events */
+  }
+
+.favorite-icon:hover {
+  color: #ff6666; /* Hover color */
+}
+
+/* When favorited */
+.favorite-icon.favorited {
+  color: #ff6666; /* Favorite color when clicked */
+}
+
+
+@keyframes slideTop {
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0%{
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0%{
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.p{
+  animation: slideRight 5s ease forwards infinite;
+  animation-delay: 5s;
+}
+
+.h3, .h1, .h2, .h4{
+  animation: slideLeft 5s ease forwards infinite;
+    animation-delay: 5s;
+}
+
+.li{
+  animation: slideTop 5s ease forwards infinite;
+  animation-delay: 5s;
+}

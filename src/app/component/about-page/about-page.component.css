@@ -1,0 +1,89 @@
+/* Custom CSS for styling */
+.container-fluid {
+    padding: 4rem 3rem; /* Adjust top padding for header */
+    background: white;
+    min-height: 90%;
+    margin: 0 auto; /* Center the container */
+    width: 80%; /* Set width to account for margins */
+}
+
+.info-container {
+    display: flex; /* Ensure flex container is used */
+    justify-content: space-between;
+}
+
+.info {
+    flex: 1;
+    padding: 40px;
+    border-radius: 10px;
+    background:  white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin-right: 20px; /* Add margin between info and image */
+}
+
+.info h2 {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+    animation: slideLeft 5s ease forwards infinite;
+    animation-delay: 15s;
+}
+
+.info p {
+    font-size: 18px;
+    line-height: 1.6;
+    animation: slideRight 5s ease forwards infinite;
+    animation-delay: 5s;
+}
+.list{
+    animation: slideRight 5s ease forwards infinite;
+    animation-delay: 5s;
+}
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+    
+    .container-fluid {
+     margin-inline:0%;
+     width: 100%;
+    }
+
+    .info-container .info{
+        margin: 0;
+        width: 100%;
+    }
+}
+
+
+@keyframes slideTop {
+    0%{
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideRight {
+    0%{
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideLeft {
+    0%{
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    100%{
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
