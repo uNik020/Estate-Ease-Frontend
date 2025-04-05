@@ -1,4 +1,10 @@
-import { Component, AfterViewInit, Inject, PLATFORM_ID, OnInit } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  Inject,
+  PLATFORM_ID,
+  OnInit
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { isPlatformBrowser } from '@angular/common';
@@ -25,9 +31,12 @@ export class AppComponent implements AfterViewInit, OnInit {
     if (this.isBrowser) {
       this.openSpinner();
 
-      // Example sessionStorage usage
-      const saved = sessionStorage.getItem('someKey');
-      console.log('Saved value:', saved);
+      try {
+        const saved = sessionStorage.getItem('someKey');
+        console.log('Saved value:', saved);
+      } catch (e) {
+        console.warn('sessionStorage not available', e);
+      }
     }
   }
 
@@ -35,8 +44,12 @@ export class AppComponent implements AfterViewInit, OnInit {
     if (!this.isBrowser) return;
 
     setTimeout(() => {
+      if (typeof document === 'undefined') return;
+
       const cursor = document.querySelectorAll<HTMLElement>(".cursor");
-      const links = document.querySelectorAll<HTMLElement>(".link, .user-name, .hero-section h1, .project-name");
+      const links = document.querySelectorAll<HTMLElement>(
+        ".link, .user-name, .hero-section h1, .project-name"
+      );
 
       if (cursor.length === 0 || links.length === 0) return;
 
@@ -63,8 +76,11 @@ export class AppComponent implements AfterViewInit, OnInit {
 
   openSpinner() {
     this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 4000);
+
+    if (this.isBrowser) {
+      setTimeout(() => {
+        this.spinner.hide();
+      }, 4000);
+    }
   }
 }

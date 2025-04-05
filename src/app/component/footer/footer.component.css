@@ -138,11 +138,11 @@
 }
 
 .footer-section.contact, .footer-section.links{
-  animation: slideLeft 5s ease forwards infinite;
+  animation: slideLeft 5s ease forwards;
     animation-delay: 5s;
 }
 
 .footer-section.about{
-  animation: slideTop 5s ease forwards infinite;
+  animation: slideTop 5s ease forwards;
   animation-delay: 5s;
 }
